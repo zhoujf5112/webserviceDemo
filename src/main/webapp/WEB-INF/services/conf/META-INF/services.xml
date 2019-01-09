@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<service name="Testservice">  <!-- 指定服务名,随便定义 -->
+    <description>测试axis2webservices</description><!-- 服务的作用说明，可写可不写 -->
+     <!-- 指定要发布的类路径 -->
+    <parameter name="ServiceClass">  <!-- 自定义    name-->
+           com.cnten.test.TestService      <!-- 写的类路径 -->
+    </parameter>  
+   <!-- 类里面的方法，有其他方法就在写个operation标签 -->
+    <operation name="test">  <!-- 类里面的方法名 -->
+        <messageReceiver class="org.apache.axis2.rpc.receivers.RPCMessageReceiver" />  
+    </operation>   
+   <!-- 类里面的方法，有其他方法就在写个operation标签 -->
+    <operation name="demo">  <!-- 类里面的方法名 -->
+        <messageReceiver class="org.apache.axis2.rpc.receivers.RPCMessageReceiver" />  
+    </operation>   
+</service>
+<!-- 路径的组成：tomcate里配置的ip和端口号 + 项目名 + web.xml里配置的<url-pattern> + service.xml里面指定的服务名 -->
+<!-- http://localhost:8080/ceshiwebservice/services/Testservice?wsdl -->
